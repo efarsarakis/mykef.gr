@@ -4,40 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>myKEF | Κέντρο Εξυπηρέτησης Φορολογουμένων</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    header, footer {
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+    header {
       background-color: #006699;
       color: white;
       text-align: center;
-      padding: 1em 0;
+      padding: 2em 1em;
     }
     header img {
       height: 80px;
-      margin-bottom: 10px;
     }
     nav {
-      background-color: #f2f2f2;
-      padding: 1em;
+      background-color: #004d66;
       text-align: center;
+      padding: 1em 0;
     }
-    main {
-      padding: 2em;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #333;
-    }
-    .services {
-      margin-top: 2em;
-    }
-    .contact {
-      margin-top: 2em;
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: 600;
     }
     .lang-switch {
       position: absolute;
@@ -50,6 +48,53 @@
       padding: 0.5em 1em;
       text-decoration: none;
       border-radius: 5px;
+      font-size: 0.9em;
+    }
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2em;
+    }
+    h2 {
+      margin-bottom: 1em;
+      color: #006699;
+      text-align: center;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5em;
+    }
+    .card {
+      background-color: white;
+      padding: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .contact, .hours {
+      margin-top: 3em;
+      background-color: #fff;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #006699;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 3em;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5em 0;
+      }
+      .lang-switch {
+        position: static;
+        margin: 1em auto;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -59,34 +104,32 @@
   </div>
 
   <header>
-    <img src="logo-png - Copy RESIZE.jpg" alt="myKEF logo" style="height: 80px;">
-    <p>Κέντρο Εξυπηρέτησης Φορολογουμένων</p>
+    <img src="logo-png - Copy RESIZE.jpg" alt="myKEF logo">
+    <h1>Κέντρο Εξυπηρέτησης Φορολογουμένων</h1>
   </header>
 
   <nav>
-    <a href="#services">Υπηρεσίες</a> | 
+    <a href="#services">Υπηρεσίες</a>
     <a href="#contact">Επικοινωνία</a>
+    <a href="#hours">Ωράριο</a>
   </nav>
 
   <main>
-    <section id="services" class="services">
-      <h2>Η λύση σε κάθε σας γραφειοκρατική ανάγκη!</h2>
-      <p><strong>Αναλαμβάνουμε:</strong></p>
-      <ul>
-        <li>Πιστοποιητικά & ληξιαρχικές πράξεις  (οικογενειακής κατάστασης, γάμου, σύμφωνου συμβίωσης, γέννησης, θανάτου, πολυτεκνικής ιδιότητας, αιτήματα πινοικού μητρώου, δικαστικής φερεγγυότητας κτλ) </li>
-        <li>Υπεύθυνες δηλώσεις, εξουσιοδοτήσεις, γνήσιο υπογραφών εγγράφων </li>
-        <li>Αιτήσεις εγγραφών για όλες τις εκπαιδευτικές βαθμίδες (βρεφονηπιακοί σταθμοί, νήπιο έως Λύκειο, σχολές ΕΠΑΣ, ΕΠΑΛ, ΣΑΕΚ κτλ)</li>
-        <li>ΔΥΠΑ - ΟΑΕΔ: Εγγραφή μητρώου ανέργων, αιτήσεις επιδομάτων (εποχιακά απασχολούμενων, μητρότητας κτλ) , βεβαιώσεις ανεργίας</li>
-        <li>ΑΣΕΠ: δημιουργία μητρώου, υποβολή αιτήσεων - ενστάσεων, προκηρύξεις δήμων κτλ </li>
-        <li>Πολίτες τρίτων χωρών: Αιτήσεις άδειας διαμονής, ανανεώσεις αδειών, ειδικά δελτία μόνιμης διανομής, επισημείωση εγγράφων με Apostille - Σφραγίδα της Χάγης </li>
-        <li>ΕΦΚΑ - ΙΚΑ - ΑΣΦΑΛΙΣΤΙΚΑ ΤΑΜΕΙΑ: Αιτήσεις για ασφαλιστική ικανότητα, επιδόματος ασθενείας, κατάθεση δικαολογιτικών για πληρωμή εξόδων κηδείας, βεβαιώσεις προϋπηρεσίας, Έκδοση Ευρωπαϊκής κάρτας ασθενείας, βεβαιώσεις απογραφής, μεταβιβάσεις συντάξεων χηρείας,κατάθεση εξόδων νοσηλείας αποκλειστικών νοσοκόμων</li>
-        <li>Υγεία: ενεργοποίηση άυλης συνταγογράφησης, αποτελέσματα διαγνωστικών εργαστηριακών εξετάσεων, αντίγραφα ατομικού φακέλου υγείας, ηλεκτρονικό βιβλιάριο υγείας παιδιού, ηλεκτρονικά ραντεβού σε ΤΟΠΥ, Κέντρα υγείας , Δημόσια Νοσοκομεία</li>
-        <li>Παροχές - αποζημιώσεις: Ελάχιστο εγγυημένο εισόδημα - ΚΕΑ, παιδιών - Α21, θέρμανσης, στέγασης, φοιτητικό, αναδοχής, γέννησης, επιταγές αγοράς βιβλίων, θεάματος, προγράμματα κοινωνικού τουρισμού & συνταξιούχων, προγράμματα κοινωφελούς χαρακτήρα</li>
-        <li>Λογιστικές υπηρεσίες: Έκδοση ΑΦΜ & κλειδαρίθμου (φυσικά πρόσωπα,ανηλίκων & κατοίκων εξωτερικού), μεταβολές μητρώου, τέλη κυκλοφορίας, δηλώσεις ακατάσχετου λογαριασμού, εγγραφές Εθνικού Μητρώου Επικοινωνίας </li>
-        <li> Εκπροσώπηση σε δημόσιους φορείς </li>
-        <li> Συνταξιοδοτικά: Καταμέτρηση ενσήμων, κατοχύρωση συνταξιοδοτικού δικαιώματος, κατάθεση αίτησης, παρακολούθηση και ενημέρωση πορείας αίτησης ώς την συνταξιοδότηση </li>
-        <li> Εξόφληση λογαριασμών & μεταφορές χρημάτων </li>
-      </ul>
+    <section id="services">
+      <h2>Οι Υπηρεσίες μας</h2>
+      <div class="service-grid">
+        <div class="card"><strong>Διοικητικά Έγγραφα:</strong> Πιστοποιητικά, ληξιαρχικές πράξεις, υπεύθυνες δηλώσεις κ.ά.</div>
+        <div class="card"><strong>Εκπαιδευτικές Αιτήσεις:</strong> Από βρεφονηπιακούς σταθμούς έως ανώτερες σχολές.</div>
+        <div class="card"><strong>ΑΣΕΠ:</strong> Δημιουργία μητρώου, αιτήσεις και ενστάσεις.</div>
+        <div class="card"><strong>Πολίτες Τρίτων Χωρών:</strong> Άδειες διαμονής, Apostille κ.ά.</div>
+        <div class="card"><strong>ΕΦΚΑ & Ασφαλιστικά:</strong> Αιτήσεις, κάρτες υγείας, έξοδα νοσηλείας.</div>
+        <div class="card"><strong>Υγεία:</strong> Άυλη συνταγογράφηση, ηλεκτρονικό βιβλιάριο παιδιού, ραντεβού.</div>
+        <div class="card"><strong>Παροχές:</strong> ΚΕΑ, Α21, θέρμανση, στέγαση, κοινωνικός τουρισμός.</div>
+        <div class="card"><strong>Λογιστικά:</strong> ΑΦΜ, μεταβολές, ακατάσχετος, ΕΜΕπ.</div>
+        <div class="card"><strong>Εκπροσώπηση:</strong> Σε δημόσιους φορείς, συμβουλευτική.</div>
+        <div class="card"><strong>Συνταξιοδοτικά:</strong> Ενσημα, παρακολούθηση διαδικασίας.</div>
+        <div class="card"><strong>Εξόφληση Λογαριασμών:</strong> ΔΕΚΟ, εμβάσματα.</div>
+      </div>
     </section>
 
     <section id="contact" class="contact">
@@ -97,11 +140,10 @@
       <p><strong>Ιστοσελίδα:</strong> <a href="https://www.mykef.gr">www.mykef.gr</a></p>
     </section>
 
-    <section id="Ωράριο λειτουργίας" class="Ωράριο λειτουργίας">
-      <h2><strong>Ωράριο λειτουργίας</h2>
+    <section id="hours" class="hours">
+      <h2>Ωράριο Λειτουργίας</h2>
       <p><strong>Δευτέρα έως Παρασκευή:</strong> 09:00 - 15:00</p>
     </section>
-    
   </main>
 
   <footer>
